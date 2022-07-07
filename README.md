@@ -15,3 +15,25 @@ $ psql postgres -U jobrunr_upgrade_demo
 > GRANT ALL PRIVILEGES ON DATABASE jobrunr_upgrade_demo TO jobrunr_upgrade_demo;
 > \q
 ```
+
+## Run part 1
+
+From this directory, run part 1, and just Ctrl+C to stop it after it has fully started:
+
+```
+$ (cd demo-part-1 && ./mvnw spring-boot:run)
+```
+
+This should initialize the application with JobRunr 4.0.7, running the JobRunr migrations.
+
+## Run part 2
+
+Run part 2 similarly, but this one fails, demonstrating the problem:
+
+```
+$ (cd demo-part-2 && ./mvnw spring-boot:run)
+```
+
+## Extra
+
+If you were to run part 2 from a fresh database, everything works, so it seems the migration order is the root cause of the issue.
