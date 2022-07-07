@@ -34,6 +34,8 @@ Run part 2 similarly, but this one fails, demonstrating the problem:
 $ (cd demo-part-2 && ./mvnw spring-boot:run)
 ```
 
+This project attempts to run with JobRunr Pro 5.1.7, but fails to start up due to an exception while running the migrations.
+
 ## Extra
 
 If you were to run part 2 from a fresh database, everything works, so it seems the migration order is the root cause of the issue.
